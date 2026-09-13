@@ -29,20 +29,25 @@ Multimodal MRI → Tumor segmentation → Structured findings → Grad-CAM evide
 
 ## Architecture
 
-```mermaid
-flowchart TD
-    A["BraTS2020 multimodal MRI"] --> B["Step 1: EDA and preprocessing"]
-    B --> C["NPZ volumes and data split"]
-    C --> D["Step 2: 3D MONAI U-Net"]
-    D --> E["Segmentation prediction"]
-    E --> F["Step 3: Structured findings"]
-    E --> G["Step 4: 3D Grad-CAM"]
-    F --> H["Step 5: MiniLM + FAISS retrieval"]
-    H --> I["Grounded research summary"]
-    F --> J["Step 6: Consistency verification"]
-    I --> J
-    G --> K["Streamlit dashboard"]
-    J --> K
+```text
+BraTS2020 multimodal MRI
+        ↓
+Step 1 — EDA and preprocessing
+        ↓
+NPZ volumes and reproducible data split
+        ↓
+Step 2 — 3D MONAI U-Net segmentation
+        ↓
+Segmentation prediction ──┬── Step 3: structured findings
+                           └── Step 4: 3D Grad-CAM
+                                         ↓
+                       Step 5: MiniLM + FAISS retrieval
+                                         ↓
+                         Grounded research summary
+                                         ↓
+                       Step 6: consistency verification
+                                         ↓
+                            Streamlit dashboard
 ```
 
 ## Tech stack
