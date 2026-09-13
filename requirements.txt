@@ -1,0 +1,14 @@
+nibabel
+nilearn
+scikit-image
+matplotlib
+tqdm
+pandas
+torch
+torchvision
+torchaudio
+monai
+sentence-transformers
+faiss-cpu
+streamlit
+ipython
