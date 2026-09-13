@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+data/
+outputs/
+*.nii
+*.nii.gz
+*.npz
+*.pt
+*.pth
